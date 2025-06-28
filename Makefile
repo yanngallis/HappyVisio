@@ -31,6 +31,8 @@ YARN_WATCH = $(YARN) watch
 PHPUNIT = APP_ENV=test $(SYMFONY) php bin/phpunit
 PHPCSFIXER = ./php-cs-fixer
 PHPSTAN = vendor/bin/phpstan
+PHPCS = vendor/bin/phpcs
+PHPCBF = vendor/bin/phpcbf
 PHPCPD = php phpcpd.phar
 PHPMETRICS = php ./vendor/bin/phpmetrics
 
@@ -166,8 +168,16 @@ qa-cs-fixer: ## Lance php-cs-fixer.
 .PHONY: qa-cs-fixer
 
 qa-phpstan: ## Lance phpstan.
-	$(PHPSTAN) analyse /var/www/html/src --configuration phpstan.neon
+	$(PHPSTAN) analyse ./src --configuration phpstan.neon
 .PHONY: qa-phpstan
+
+qa-phpcs: ## Lance phpcs sur le répertoire src
+	$(PHPCS) --standard=PSR12 ./src
+.PHONY: qa-phpcs
+
+qa-phpcbf: ## Lance phpcbf sur le répertoire src
+	$(PHPCBF) --standard=PSR12 ./src
+.PHONY: qa-phpcbf
 
 qa-security-checker: ## Lance security-checker de Symfony.
 	$(SYMFONY) security:check
@@ -213,7 +223,7 @@ tests-coverage: ## Lance les tests avec rapport de couverture.
 #---------------------------------------------#
 
 ## === ⭐  OTHERS =================================================
-before-commit: qa-phpstan qa-security-checker qa-lint-twigs qa-lint-yaml qa-lint-container qa-lint-schema tests ## A lancer avant de commiter.
+before-commit: qa-phpstan qa-phpcs qa-phpcbf qa-security-checker qa-lint-twigs qa-lint-yaml qa-lint-container qa-lint-schema tests ## A lancer avant de commiter.
 .PHONY: before-commit
 
 first-install: composer-install yarn-install yarn-build sf-perm sf-dmm ## Première installation du projet.
