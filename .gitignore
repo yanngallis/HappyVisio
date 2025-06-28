@@ -47,7 +47,6 @@
 
 .directory
 .idea/
-.env
 .env.local
 .env.local.php
 
@@ -103,8 +102,11 @@ yarn.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
-.editorconfig
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###
