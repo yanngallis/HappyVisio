@@ -102,7 +102,6 @@ yarn.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
-.editorconfig
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
