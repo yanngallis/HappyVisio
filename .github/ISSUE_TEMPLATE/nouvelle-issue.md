@@ -1,5 +1,10 @@
 ---
 name: Nouvelle issue
+about: Modèle pour les nouvelles issues
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
 # CONTEXTE
