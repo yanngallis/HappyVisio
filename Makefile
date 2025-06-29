@@ -223,7 +223,7 @@ tests-coverage: ## Lance les tests avec rapport de couverture.
 #---------------------------------------------#
 
 ## === ⭐  OTHERS =================================================
-before-commit: qa-phpstan qa-phpcs qa-phpcbf qa-security-checker qa-lint-twigs qa-lint-yaml qa-lint-container qa-lint-schema tests ## A lancer avant de commiter.
+before-commit: qa-phpstan qa-phpcbf qa-security-checker qa-lint-twigs qa-lint-yaml qa-lint-container qa-lint-schema tests ## A lancer avant de commiter.
 .PHONY: before-commit
 
 first-install: composer-install yarn-install yarn-build sf-perm sf-dmm ## Première installation du projet.
