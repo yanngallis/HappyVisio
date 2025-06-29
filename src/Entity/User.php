@@ -140,6 +140,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->numberOfTry = 0;
         $this->isBlocked = false;
         $this->isDeleted = false;
+        $this->isBanned = false;
         $this->isForceChangePassword = false;
         $this->isForceComplexPassword = false;
         $this->isMailUpcomingRDV = true;
