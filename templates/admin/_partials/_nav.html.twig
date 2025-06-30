@@ -9,10 +9,10 @@
 <div class="sticky">
     <aside class="app-sidebar sidebar-scroll">
         <div class="main-sidebar-header active">
-            <a class="desktop-logo logo-light active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" class="main-logo" alt="logo"></a>
-            <a class="desktop-logo logo-dark active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" class="main-logo" alt="logo"></a>
-            <a class="logo-icon mobile-logo icon-light active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" alt="logo"></a>
-            <a class="logo-icon mobile-logo icon-dark active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" alt="logo"></a>
+            <a class="desktop-logo logo-light active" href="{{ path('admin') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" class="main-logo" alt="logo"></a>
+            <a class="desktop-logo logo-dark active" href="{{ path('admin') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" class="main-logo" alt="logo"></a>
+            <a class="logo-icon mobile-logo icon-light active" href="{{ path('admin') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" alt="logo"></a>
+            <a class="logo-icon mobile-logo icon-dark active" href="{{ path('admin') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" alt="logo"></a>
         </div>
         <div class="main-sidemenu">
 
@@ -20,19 +20,19 @@
             <ul class="side-menu">
                 <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.general' | trans }}</li>
                 <li class="slide pt-1">
-                    <a class="side-menu__item" href="{{ path('app_default') }}">
+                    <a class="side-menu__item" href="{{ path('home') }}">
                         <i class="fa-solid fa-backward-fast fs-5 pe-3"></i>
                         <span class="side-menu__label">{{ 'admin.navigation.website' | trans }}</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item {% if app.request.attributes.get('_route') == 'admin_default' %}active{% endif %}" href="{{ path('admin_default') }}">
+                    <a class="side-menu__item {% if app.request.attributes.get('_route') == 'admin' %}active{% endif %}" href="{{ path('admin') }}">
                         <i class="fa-solid fa-gauge fs-5 pe-3"></i>
                         <span class="side-menu__label">{{ 'admin.navigation.dashboard' | trans }}</span>
                     </a>
                 </li>
                 <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.activities' | trans }}</li>
-                <li class="slide {% if app.request.attributes.get('_route') in categoryRoutes %}is-expanded{% endif %}">
+                {# <li class="slide {% if app.request.attributes.get('_route') in categoryRoutes %}is-expanded{% endif %}">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fas fa-list fs-5 pe-3"></i><span class="side-menu__label text-white w-100">{{ 'admin.navigation.categories.categories' | trans }}</span><i class="angle fe fe-chevron-down"></i></a>
                     <ul class="slide-menu">
                         <li class="panel sidetab-menu">
@@ -85,9 +85,9 @@
                             </div>
                         </li>
                     </ul>
-                </li>
+                </li> #}
                 <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.user' | trans }}</li>
-                <li class="slide {% if app.request.attributes.get('_route') in userRoutes %}is-expanded{% endif %}">
+                {# <li class="slide {% if app.request.attributes.get('_route') in userRoutes %}is-expanded{% endif %}">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fa-solid fa-users fs-5 pe-3"></i><span class="side-menu__label text-white w-100">{{ 'admin.navigation.categories.user' | trans }}</span><i class="angle fe fe-chevron-down"></i></a>
                     <ul class="slide-menu">
                         <li class="panel sidetab-menu">
@@ -113,9 +113,9 @@
                             </div>
                         </li>
                     </ul>
-                </li>
+                </li> #}
                 <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.partner' | trans }}</li>
-                <li class="slide">
+                {# <li class="slide">
                     <a class="side-menu__item {% if app.request.attributes.get('_route') in partnerRoutes %}active{% endif %}" href="{{ path('admin_partner_index') }}">
                         <i class="fa-solid fas fa-handshake fs-5 pe-3"></i>
                         <span class="side-menu__label">{{ 'admin.navigation.categories.partner' | trans }}</span>
@@ -147,7 +147,7 @@
                             </div>
                         </li>
                     </ul>
-                </li>
+                </li> #}
             </ul>
             <div class="slide-right" id="slide-right">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
