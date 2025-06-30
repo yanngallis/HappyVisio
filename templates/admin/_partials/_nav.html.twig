@@ -1,0 +1,159 @@
+{% set categoryRoutes = ['admin_category_archived', 'admin_category_edit', 'admin_category_index', 'admin_category_new'] %}
+{% set conferenceRoutes = ['admin_conference_archived', 'admin_conference_edit', 'admin_conference_index', 'admin_conference_new'] %}
+{% set couponRoutes = ['admin_coupon_archived', 'admin_coupon_edit', 'admin_coupon_index', 'admin_coupon_new'] %}
+{% set userRoutes = ['admin_user_edit', 'admin_user_export', 'admin_user_index', 'admin_user_new'] %}
+{% set partnerRoutes = ['admin_partner_edit', 'admin_partner_index', 'admin_partner_new'] %}
+
+
+<div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+<div class="sticky">
+    <aside class="app-sidebar sidebar-scroll">
+        <div class="main-sidebar-header active">
+            <a class="desktop-logo logo-light active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" class="main-logo" alt="logo"></a>
+            <a class="desktop-logo logo-dark active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" class="main-logo" alt="logo"></a>
+            <a class="logo-icon mobile-logo icon-light active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" alt="logo"></a>
+            <a class="logo-icon mobile-logo icon-dark active" href="{{ path('admin_default') }}"><img src="{{ asset('assets/images/brand/logo-white.png') }}" alt="logo"></a>
+        </div>
+        <div class="main-sidemenu">
+
+            <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
+            <ul class="side-menu">
+                <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.general' | trans }}</li>
+                <li class="slide pt-1">
+                    <a class="side-menu__item" href="{{ path('app_default') }}">
+                        <i class="fa-solid fa-backward-fast fs-5 pe-3"></i>
+                        <span class="side-menu__label">{{ 'admin.navigation.website' | trans }}</span>
+                    </a>
+                </li>
+                <li class="slide">
+                    <a class="side-menu__item {% if app.request.attributes.get('_route') == 'admin_default' %}active{% endif %}" href="{{ path('admin_default') }}">
+                        <i class="fa-solid fa-gauge fs-5 pe-3"></i>
+                        <span class="side-menu__label">{{ 'admin.navigation.dashboard' | trans }}</span>
+                    </a>
+                </li>
+                <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.activities' | trans }}</li>
+                <li class="slide {% if app.request.attributes.get('_route') in categoryRoutes %}is-expanded{% endif %}">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fas fa-list fs-5 pe-3"></i><span class="side-menu__label text-white w-100">{{ 'admin.navigation.categories.categories' | trans }}</span><i class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_category_index' %}active{% endif %}" href="{{ path('admin_category_index') }}">{{ 'admin.navigation.list' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_category_archived' %}active{% endif %}" href="{{ path('admin_category_archived') }}">{{ 'admin.navigation.archived' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="slide {% if app.request.attributes.get('_route') in conferenceRoutes %}is-expanded{% endif %}">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fas fa-building-columns fs-5 pe-3"></i><span class="side-menu__label text-white w-100">{{ 'admin.navigation.categories.conferences' | trans }}</span><i class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_conference_index' %}active{% endif %}" href="{{ path('admin_conference_index') }}">{{ 'admin.navigation.list' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_conference_archived' %}active{% endif %}" href="{{ path('admin_conference_archived') }}">{{ 'admin.navigation.archived' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.user' | trans }}</li>
+                <li class="slide {% if app.request.attributes.get('_route') in userRoutes %}is-expanded{% endif %}">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fa-solid fa-users fs-5 pe-3"></i><span class="side-menu__label text-white w-100">{{ 'admin.navigation.categories.user' | trans }}</span><i class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_user_index' %}active{% endif %}" href="{{ path('admin_user_index') }}">{{ 'admin.navigation.list' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_user_export' %}active{% endif %}" href="{{ path('admin_user_export') }}">{{ 'admin.navigation.export' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="side-item side-item-category pt-2">{{ 'admin.navigation.categories.partner' | trans }}</li>
+                <li class="slide">
+                    <a class="side-menu__item {% if app.request.attributes.get('_route') in partnerRoutes %}active{% endif %}" href="{{ path('admin_partner_index') }}">
+                        <i class="fa-solid fas fa-handshake fs-5 pe-3"></i>
+                        <span class="side-menu__label">{{ 'admin.navigation.categories.partner' | trans }}</span>
+                    </a>
+                </li>
+                <li class="slide {% if app.request.attributes.get('_route') in couponRoutes %}is-expanded{% endif %}">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="fas fa-ticket-alt fs-5 pe-3"></i><span class="side-menu__label text-white w-100">{{ 'admin.navigation.categories.coupon' | trans }}</span><i class="angle fe fe-chevron-down"></i></a>
+                    <ul class="slide-menu">
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_coupon_index' %}active{% endif %}" href="{{ path('admin_coupon_index') }}">{{ 'admin.navigation.list' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane tab-content-show active" id="side20">
+                                        <ul class="sidemenu-list">
+                                            <li><a class="slide-item {% if app.request.attributes.get('_route') == 'admin_coupon_archived' %}active{% endif %}" href="{{ path('admin_coupon_archived') }}">{{ 'admin.navigation.archived' | trans }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="slide-right" id="slide-right">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"/>
+                </svg>
+            </div>
+        </div>
+    </aside>
+</div>
