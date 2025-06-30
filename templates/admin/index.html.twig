@@ -1,0 +1,77 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Administration HappyVisio{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin_index') }}
+{% endblock %}
+
+{% block breadcrumb %}
+    <div class="breadcrumb-header justify-content-between">
+        <div class="left-content">
+            <div>
+                <h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">{{ 'admin.ui.welcome' | trans }} {{ app.user.firstname }} !
+                    {% for role in app.user.roles %}
+                        <span class="tag tag-green">{{ role | trans }}</span>
+                    {% endfor %}
+                </h2>
+                <p class="mg-b-0"></p>
+            </div>
+        </div>
+        <div class="main-dashboard-header-right">
+            <div>
+                <label class="tx-13"></label>
+                <h5></h5>
+            </div>
+            <div>
+                <label class="tx-13"></label>
+                <h5></h5>
+            </div>
+            <div>
+                <label class="tx-13"></label>
+                <h5></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    {% include 'admin/_partials/_header_graph.html.twig' with {
+        'graph1_text' : '',
+        'graph1_number' : 0,
+        'graph2_text' : '',
+        'graph2_number' : 0,
+        'graph3_text' : '',
+        'graph3_number' : 0,
+        'graph4_text' : '',
+        'graph4_number' : 0
+    } %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">{{ 'admin.ui.dashboard' | trans }}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-12">
+                            <div id='calendar'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        
+    </script>
+
+    {{ encore_entry_script_tags('admin_index') }}
+{% endblock %}

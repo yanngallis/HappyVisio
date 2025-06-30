@@ -1,0 +1,39 @@
+/* MENU */
+.dark-menu .side-menu__item,
+.dark-menu .side-menu__item.active .side-menu__label,
+.dark-menu .slide:hover .side-menu__label {
+  color: var(--white) !important;
+}
+
+.dark-menu .side-menu__item.active,
+.dark-menu .slide.is-expanded .side-menu__item,
+.dark-menu .slide:hover .side-menu__item {
+  background-color: var(--primary-3) !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: var(--primary-3) !important;
+  border-color: var(--primary-3) !important;
+  color: var(--white) !important;
+}
+
+.operation {
+  font-size: 25px;
+}
+
+.operation-add:before {
+  color: #198754 !important;
+}
+
+.operation-remove:before {
+  color: #dc3545 !important;
+}
+
+.swal-footer, .swal-text {
+  text-align: center;
+}
+
+#picker {
+  display: inline-block;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(3, 1, 1, 0.08);
+}

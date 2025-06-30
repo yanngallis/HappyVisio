@@ -1,0 +1,34 @@
+<div id="imageCropperModal" class="modal fade bd-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageCropperModalLabel">{{ 'admin.ui.media.image.resize' | trans }}</h5>
+                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="img-container">
+                    <div >
+                        <img src="" id="cropperImage" alt="" style="max-height: 600px;"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="mr-auto">
+                    <a id="imageCropperZoomPlus">
+                        <span class="btn btn-primary me-1">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </span>
+                    </a>
+                    <a id="imageCropperZoomMinus">
+                        <span class="btn btn-primary ms-1">
+                            <i class="fa-solid fa-magnifying-glass-minus"></i>
+                        </span>
+                    </a>
+                </div>
+                <button type="button" id="crop" class="btn btn-primary">{{ 'admin.ui.media.image.resize' | trans }}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,170 @@
+/* ###### Checkbox ###### */
+
+.ckbox {
+  font-weight: normal;
+  position: relative;
+  line-height: 1;
+  margin-block-end: 0;
+
+  span {
+    padding-inline-start: 15px;
+
+    &:empty {
+      float: $float-left;
+    }
+
+    &:before, &:after {
+      line-height: 18px;
+      position: absolute;
+    }
+
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: $white;
+      border: 1px solid $border;
+      top: 1px;
+      inset-inline-start: 0;
+    }
+
+    &:after {
+      top: 1px;
+      inset-inline-start: 0;
+      width: 16px;
+      height: 16px;
+      content: '';
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+      background-size: 65%;
+      background-repeat: no-repeat;
+      background-position: 55% 45%;
+      background-color: $primary;
+      line-height: 17px;
+      display: none;
+    }
+
+    &:empty {
+      padding-inline-start: 0;
+      width: 3px;
+    }
+  }
+
+  input[type='checkbox'] {
+    opacity: 0;
+    margin: 0;
+
+    &:checked + span:after {
+      display: block;
+    }
+
+    &[disabled] + span {
+      opacity: .75;
+
+      &:before, &:after {
+        opacity: .75;
+      }
+    }
+  }
+}
+
+.ckbox-inline {
+  display: inline-block;
+}
+/* ###### Checkbox End ###### */
+
+$toggle-indicator-size: 24px; // changing this number will resize the whole toggle
+$track-height: $toggle-indicator-size + 6;
+$track-width: $toggle-indicator-size * 2.5;
+$highContrastModeSupport: solid 2px transparent;
+
+$track-border: $success;
+$track-background: $success;
+$focus-ring: 0px 0px 0px 2px $dark;
+
+
+// Toggle specific styles
+.toggle {
+  align-items: center;
+  border-radius: 100px;
+  display: flex;
+  margin-bottom: 16px;
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+// Since we can't style the checkbox directly, we "hide" it so we can draw the toggle.
+.toggle__input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+
+  // This style sets the focus ring. The ":not([disabled])" prevents the focus ring from creating a flash when the element is clicked.
+  &:not([disabled]):active + .toggle-track,
+  &:not([disabled]):focus + .toggle-track {
+    border: 1px solid transparent;
+    box-shadow: $focus-ring;
+  }
+
+  &:disabled + .toggle-track {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.toggle-track {
+  background: $track-background;
+  border: 1px solid $track-border;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  height: $track-height;
+  margin-right: 12px;
+  position: relative;
+  width: $track-width;
+}
+
+.toggle-indicator {
+  align-items: center;
+  background: $dark;
+  border-radius: $toggle-indicator-size;
+  bottom: 2px;
+  display: flex;
+  height: $toggle-indicator-size;
+  justify-content: center;
+  left: 2px;
+  outline: $highContrastModeSupport;
+  position: absolute;
+  transition: 0.5s;
+  width: $toggle-indicator-size;
+}
+
+// The check mark is optional
+.checkMark {
+  fill: #fff;
+  height: $toggle-indicator-size - 4;
+  width: $toggle-indicator-size - 4;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.toggle__input:checked + .toggle-track .toggle-indicator {
+  background: $dark;
+  transform: translateX($track-width - $track-height);
+
+  .checkMark {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .toggle-track {
+    border-radius: 0;
+  }
+}

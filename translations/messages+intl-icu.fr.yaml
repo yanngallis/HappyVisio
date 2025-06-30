@@ -1,0 +1,241 @@
+admin:
+  categories:
+    form:
+      definition: Définition de la catégorie
+      settings: Paramètres
+  coupon:
+    form:
+      definition: Définition du code
+      settings: Paramètres
+  datatable:
+    actions: Actions
+    available:
+      exports: Exports disponibles
+    birthYear: Naissance
+    category: Catégorie
+    color: Couleur
+    coupons: Codes
+    createdAt: Date de création
+    date: Date
+    email: Email
+    firstname: Prénom
+    gender: Genre
+    id: ID
+    isConsultation: Consultations
+    isHomepage: Page d'accueil
+    lastname: Nom
+    lastLoginDate: Dernière connexion
+    name: Nom
+    nb:
+      registered: Nombre d'inscrits
+    operation: Opération
+    partner: Partenaire
+    phoneNumber: Téléphone
+    postalCode: CP
+    registrationDate: Inscription
+    source: Source
+    value: Valeur
+  navigation:
+    archived: Archivés
+    categories:
+      activities: Activités
+      archived:
+        category: Catégories archivées
+        coupon: Codes archivés
+      categories: Catégories
+      conferences: Conférences
+      coupon: Codes
+      general: Général
+      partner: Partenaires
+      user: Utilisateurs
+    dashboard: Tableau de bord
+    export: Export
+    list: Liste
+    logout: Déconnexion
+    website: Retour au site
+  partner:
+    form:
+      definition: Définition du partenaire
+      settings: Paramètres
+  tooltip:
+    category:
+      archive: Archiver cette catégorie
+      edit: Éditer cette catégorie
+      unarchive: Désarchiver cette catégorie
+    conference:
+      archive: Archiver cette conférence
+      edit: Éditer cette conférence
+      unarchive: Désarchiver cette conférence
+    coupon:
+      archive: Archiver ce code
+      edit: Éditer ce code
+      unarchive: Désarchiver ce code
+    export:
+      do: Exporter
+    partner:
+      archive: Archiver ce partenaire
+      edit: Éditer ce partenaire
+    user:
+      delete: Supprimer cet utilisateur
+      edit : Éditer cet utilisateur
+      log_as : Se connecter en tant que
+  ui:
+    categories:
+      archived:
+        list: Liste des catégories archivées
+      create: Ajouter une nouvelle catégorie
+      edit: Édition d'une catégorie
+      list: Liste des catégories
+    conferences:
+      archived:
+        list: Liste des conférences archivées
+      create: Ajouter une nouvelle conférence
+      list: Liste des conférences
+      edit: Édition d'une conférence
+    coupon:
+      archived:
+        list: Liste des codes archivés
+      create: Ajouter un nouveau code
+      list: Liste des codes
+      edit: Édition du code
+    dashboard: Tableau de bord des activités
+    loading: Chargement en cours
+    media:
+      image:
+        resize: Redimensionner l'image
+    partner:
+      create: Ajouter un nouveu partenaire
+      edit: Édition du partenaire
+      list: Liste des partenaires
+    user:
+      create: Ajouter un nouvel utilisateur
+      edit: Édition de l'utilisateur
+      export:
+        all: Exporter tous les utilisateurs non anonymisés avec toutes les données
+        label: Export des utilisateurs
+      list: Liste des utilisateurs
+    welcome: Bienvenue
+  user:
+    active: Utilisateurs non anonymisés
+    form:
+      admin: Administration
+      coordinates: Coordonnées
+      email_preferences: Préférences Email
+      properties: Propriétés
+    registered:
+      platform: Utilisateurs inscrits à la plateforme
+      month: Utilisateurs inscrits ce mois
+      today: Utilisateurs inscrits aujourd'hui
+
+category:
+  name: Nom de la catégorie
+  color: Couleur de la catégorie
+  description: Description
+  isHomepage: Catégorie affichée sur la page d'accueil pour les non-connectés
+  isConsultation: Catégorie disponible pour les consultations
+  save: Enregistrer la catégorie
+
+coupon:
+  isArchived: Code archivé
+  isReplay: Possibilité de voir les replays
+  partner: Partenaire
+  save: Enregistrer le code
+  value: Valeur
+
+flash:
+  category:
+    edit:
+      success: Catégorie éditée avec succès
+    create:
+      success: Catégorie créée avec succès
+  coupon:
+    edit:
+      success: Code édité avec succès
+    create:
+      success: Code créé avec succès
+  user:
+    edit:
+      success: Utilisateur édité avec succès
+    create:
+      success: Utilisateur créé avec succès
+  partner:
+    edit:
+      success: Partenaire édité avec succès
+    create:
+      success: Partenaire créé avec succès
+
+partner:
+  description: Description
+  image: Logo du partenaire
+  isActive: Partenaire actif sur la page "Nos partenaires"
+  name: Nom du partenaire
+  save: Enregistrer le partenaire
+  shortDescription: Description courte
+  website: Site internet
+
+user:
+  address: Adresse postale
+  address2: Complément d'adresse
+  birthYear: Année de naissance
+  city: Ville
+  comment: Commentaire
+  couponHistory:
+    label: Historique des codes
+    REGISTER_PAGE: Page de création du compte
+    MY_ACCOUNT_PAGE: Page Mon profil
+    ADMIN_USER_CREATE: Création de l'utilisateur par un administrateur HappyVisio
+    ADMIN_TRANSFERT: Transfert collectif des utilisateurs
+    INVITATION_COUPON: Page d'invitation par code
+    INVITATION_PROGRAM: Page d'invitation par programme de conférences
+    INVITATION_CONFERENCE: Page d'invitation par conférence
+    INVITATION_ATELIER: Page d'invitation par atelier
+    INVITATION_SESSION: Page d'invitation par séance d'atelier
+    INVITATION_REPLAY: Page d'invitation par replay
+    ADMIN_USER_UPDATE: Mise à jour de l'utilisateur par un administrateur HappyVisio
+    INVITATION_PARRAINAGE: Parrainage
+    INVITATION_ATELIER_PROGRAM: Page d'invitation par programme d'ateliers
+    INVITATION_CONSULTATION: Page d'invitation pour les consultations
+    COMMAND: Commande automatisée
+  coupons: Codes
+  createdAt: Date de création
+  email: Email
+  export:
+    ok:
+      text: L'export a été effectué avec succès et le fichier va être téléchargé
+      title: Ok !
+    ko:
+      text: Une erreur s'est produite lors de l'export. Si cela recommence, merci de laisser un message sur Slack dans le canal demande-dev pour que ce problème soit résolu rapidement
+      title: Oups !
+  excel:
+    all:
+      sheet: Tous les utilisateurs
+  firstname: Prénom
+  gender:
+    label: Civilité
+    female: Femme
+    male: Homme
+  id: Identifiant
+  isBlocked: Utilisateur bloqué
+  isDeleted: Utilisateur supprimé
+  isForceChangePassword: Utilisateur forcé de changer son mot de passe
+  isForceComplexPassword: Utilisateur forcé d'utiliser un mot de passe complexe
+  lastLoginAt: Dernière connexion
+  lastname: Nom
+  mails:
+    newsletter: Les communications d'HappyVisio
+    upcoming: Programme de vos rendez-vous à venir (email hebdomadaire)
+    post_activity: Email post conférences ou ateliers (remerciement, évaluation...)
+    reminder24h: Email de rappel du rdv 24h avant le début de l’activité
+    reminder1h: Email de rappel du rdv 1h avant le début de l’activité
+    registered_confirmation: Email de confirmation d’inscription à l’activité
+    sms_reminder1h: SMS de rappel du rdv 1h avant le début de l’activité
+  numberOfTry: Nombre de tentatives de connexion
+  password: Mot de passe
+  phoneNumber: Numéro de téléphone
+  postalCode: Code postal
+  pseudo: Pseudo
+  roles: Rôles de l'utilisateur
+  save: Enregistrer l'utilisateur
+
+ROLE_ADMIN: Administrateur
+ROLE_USER: Utilisateur

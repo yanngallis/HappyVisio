@@ -1,0 +1,41 @@
+<div class="main-header side-header sticky nav nav-item">
+    <div class="container-fluid main-container ">
+        <div class="main-header-left ">
+            <div class="responsive-logo">
+                <a href="{{ path('admin') }}" class="header-logo">
+                    <img src="{{ asset('assets/images/brand/logo-white.png') }}" class="logo-1" alt="logo">
+                    <img src="{{ asset('assets/images/brand/logo-white.png') }}" class="dark-logo-1" alt="logo">
+                </a>
+            </div>
+            <div class="app-sidebar__toggle" data-bs-toggle="sidebar">
+                <a class="open-toggle text-white" href="javascript:void(0);"><i class="header-icon fa-solid fa-bars" ></i></a>
+                <a class="close-toggle text-white" href="javascript:void(0);"><i class="header-icon fa-solid fa-bars"></i></a>
+            </div>
+        </div>
+        <div class="main-header-right">
+            <div class="mb-0 navbar navbar-expand-lg navbar-nav-right responsive-navbar navbar-dark p-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                    <ul class="nav nav-item  navbar-nav-right ms-auto">
+                        <li class="dropdown main-profile-menu nav nav-item nav-link">
+                            <a class="profile-user d-flex" href="">
+                                <div class="avatar avatar bg-primary rounded-circle">
+                                    {{ initials }}
+                                </div>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="main-header-profile bg-primary p-3">
+                                    <div class="d-flex wd-100p">
+                                        <div class="ms-3 my-auto">
+                                            <h6>{{ fullname }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>{{ 'admin.navigation.logout' | trans }}</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

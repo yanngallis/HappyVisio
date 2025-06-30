@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>{% block title %}{% endblock %}</title>
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('admin') }}
+        {% endblock %}
+    </head>
+    <body class="main-body app sidebar-mini ltr dark-menu dark-header">
+        <div id="global-loader">
+            <img src="{{ asset('assets/images/loader.svg') }}" class="loader-img" alt="{{ 'admin.ui.loading' | trans }}">
+        </div>
+
+        <div class="page custom-index">
+            <div>
+                {% include 'admin/_partials/_header.html.twig' with {
+                    'initials' : app.user.initials,
+                    'fullname' : app.user.fullName
+                } %}
+                {% include 'admin/_partials/_nav.html.twig' %}
+            </div>
+
+            <div class="main-content app-content">
+                <div class="main-container container-fluid">
+                    {% block breadcrumb %}{% endblock %}
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('admin') }}
+        {% endblock %}
+    </body>
+</html>
