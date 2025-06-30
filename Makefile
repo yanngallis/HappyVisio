@@ -235,6 +235,6 @@ start: docker-up ## Lance le projet.
 stop: docker-stop ## Arrête le projet.
 .PHONY: stop
 
-deploy: composer-install sf-dmm sf-cc yarn-install yarn-build ## Lance le déploiement du projet
+deploy: composer-install sf-dmm sf-dmm-test sf-cc yarn-install yarn-build ## Lance le déploiement du projet
 .PHONY: deploy
 #---------------------------------------------#
